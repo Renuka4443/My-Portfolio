@@ -136,7 +136,7 @@ const HeroSection = () => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden elegant-card p-2">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <img 
-                    src="/public/profile_img.jpg"
+                    src="/profile_img.jpg"
                     alt="Renuka Wadetwar"
                     className="w-full h-full object-cover"
                   />
