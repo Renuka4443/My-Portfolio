@@ -74,7 +74,7 @@ A modern, fully responsive personal portfolio that highlights my skills, journey
 
 <div align="center">
 
-**⭐ If this portfolio resonated with you, a star would mean a lot!**  
-*Built with ❤️ by Renuka Wadetwar*
+
+**Built with ❤️ by Renuka Wadetwar**
 
 </div>
