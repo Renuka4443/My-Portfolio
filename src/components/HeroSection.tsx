@@ -41,7 +41,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-25 to-stone-50 flex items-center relative overflow-hidden">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-25 to-stone-50 flex items-center relative overflow-hidden" style={{ minHeight: '100vh', minHeight: '100dvh' }}>
       {/* Thin dark beige line below navbar */}
       <div className="absolute top-0 left-0 right-0 h-px bg-[#E6E6C7]" />
       
@@ -49,25 +49,17 @@ const HeroSection = () => {
       <div className="absolute top-10 right-4 sm:top-20 sm:right-20 w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-br from-yellow-100/30 to-orange-100/20 rounded-full blur-2xl"></div>
       <div className="absolute bottom-16 left-4 sm:bottom-32 sm:left-16 w-12 h-12 sm:w-24 sm:h-24 bg-gradient-to-br from-amber-100/20 to-yellow-100/15 rounded-full blur-xl"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-20">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-16 lg:py-20">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center justify-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-10rem)] lg:min-h-auto">
           
           {/* Profile Image - Mobile First (shows at top on mobile) */}
-          <div className="flex justify-center order-1 lg:order-2 animate-fade-in-right">
+          <div className="flex justify-center order-1 lg:order-2 animate-fade-in-right flex-shrink-0">
             <div className="relative flex items-center justify-center" style={{ 
-              width: '280px', 
-              height: '280px',
-              '@media (min-width: 640px)': {
-                width: '320px',
-                height: '320px'
-              },
-              '@media (min-width: 1024px)': {
-                width: '380px',
-                height: '380px'
-              }
+              width: '240px', 
+              height: '240px'
             }}>
               {/* Main image container - responsive sizing */}
-              <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden elegant-card p-2">
+              <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden elegant-card p-2">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <img 
                     src="/profile_img.jpg"
@@ -81,37 +73,37 @@ const HeroSection = () => {
               <div
                 style={{
                   ...ringStyle,
-                  width: '260px',
-                  height: '260px',
+                  width: '220px',
+                  height: '220px',
                   border: '2px solid rgba(234, 216, 191, 0.3)',
                   borderTop: '2px solid #ba8e46',
                   animation: 'rotate 10s linear infinite',
                 }}
-                className="sm:w-80 sm:h-80 lg:w-96 lg:h-96"
+                className="sm:!w-72 sm:!h-72 md:!w-80 md:!h-80 lg:!w-96 lg:!h-96"
               ></div>
 
               <div
                 style={{
                   ...ringStyle,
-                  width: '280px',
-                  height: '280px',
+                  width: '240px',
+                  height: '240px',
                   border: '1px solid rgba(210, 190, 165, 0.2)',
                   borderBottom: '1px solid #c9b89c',
                   animation: 'rotate 15s linear infinite reverse',
                 }}
-                className="sm:w-88 sm:h-88 lg:w-104 lg:h-104"
+                className="sm:!w-80 sm:!h-80 md:!w-88 md:!h-88 lg:!w-104 lg:!h-104"
               ></div>
 
               <div
                 style={{
                   ...ringStyle,
-                  width: '300px',
-                  height: '300px',
+                  width: '260px',
+                  height: '260px',
                   border: '1px solid rgba(200, 180, 150, 0.2)',
                   borderTop: '1px solid #bca45a',
                   animation: 'rotate 20s linear infinite',
                 }}
-                className="hidden sm:block sm:w-96 sm:h-96 lg:w-112 lg:h-112"
+                className="hidden sm:block sm:!w-88 sm:!h-88 md:!w-96 md:!h-96 lg:!w-112 lg:!h-112"
               ></div>
             </div>
           </div>
@@ -227,7 +219,20 @@ const HeroSection = () => {
           50% { opacity: 0; }
         }
         
-        /* Custom responsive ring sizes */
+        /* Mobile viewport handling for iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+          section {
+            min-height: -webkit-fill-available;
+          }
+        }
+        
+        /* For mobile browsers */
+        @media screen and (max-width: 768px) {
+          section {
+            min-height: 100vh;
+            min-height: 100dvh;
+          }
+        }
         @media (min-width: 640px) {
           .w-88 { width: 22rem; }
           .h-88 { height: 22rem; }
