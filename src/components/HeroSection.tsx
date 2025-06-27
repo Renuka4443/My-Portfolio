@@ -114,7 +114,7 @@ const HeroSection = () => {
                 asChild
                 className="bg-dark-charcoal hover:bg-gray-800 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-light text-base transition-all duration-300 hover:scale-105 shadow-cream hover:shadow-lg"
               >
-                <a href="/DRAFT.pdf" download="Resume_Renuka_Wadetwar.pdf">
+                <a href="/RENUKA_RESUME.pdf" download="Resume_Renuka_Wadetwar.pdf">
                   <Download className="w-5 h-5 mr-2" />
                   Download Resume
                 </a>
